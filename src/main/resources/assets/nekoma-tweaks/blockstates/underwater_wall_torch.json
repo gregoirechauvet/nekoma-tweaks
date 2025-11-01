@@ -1,17 +1,17 @@
 {
   "variants": {
     "facing=east": {
-      "model": "nekoma-tweaks:block/underwater_wall_torch",
-      "y": 90
-    },
-    "facing=north": {
       "model": "nekoma-tweaks:block/underwater_wall_torch"
     },
     "facing=south": {
       "model": "nekoma-tweaks:block/underwater_wall_torch",
-      "y": 180
+      "y": 90
     },
     "facing=west": {
+      "model": "nekoma-tweaks:block/underwater_wall_torch",
+      "y": 180
+    },
+    "facing=north": {
       "model": "nekoma-tweaks:block/underwater_wall_torch",
       "y": 270
     }
