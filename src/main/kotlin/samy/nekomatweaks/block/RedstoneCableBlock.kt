@@ -9,6 +9,12 @@ import net.minecraft.fluid.Fluids
 import net.minecraft.item.ItemPlacementContext
 import net.minecraft.state.StateManager
 import net.minecraft.state.property.Properties
+import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Direction
+import net.minecraft.util.math.random.Random
+import net.minecraft.world.WorldView
+import net.minecraft.world.tick.ScheduledTickView
+
 
 class RedstoneCableBlock(settings: Settings) : RedstoneWireBlock(settings), Waterloggable {
 
@@ -32,5 +38,31 @@ class RedstoneCableBlock(settings: Settings) : RedstoneWireBlock(settings), Wate
         } else {
             super.getFluidState(state)
         }
+    }
+
+    public override fun getStateForNeighborUpdate(
+        state: BlockState,
+        world: WorldView,
+        tickView: ScheduledTickView,
+        pos: BlockPos,
+        direction: Direction,
+        neighborPos: BlockPos,
+        neighborState: BlockState,
+        random: Random
+    ): BlockState {
+        if (state.get(Properties.WATERLOGGED)) {
+            tickView.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world))
+        }
+
+        return super.getStateForNeighborUpdate(
+            state,
+            world,
+            tickView,
+            pos,
+            direction,
+            neighborPos,
+            neighborState,
+            random
+        )
     }
 }

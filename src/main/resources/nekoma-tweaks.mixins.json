@@ -3,7 +3,7 @@
 	"package": "samy.nekomatweaks.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"RedstoneWireBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
