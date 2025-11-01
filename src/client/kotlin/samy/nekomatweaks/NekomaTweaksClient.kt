@@ -10,5 +10,6 @@ object NekomaTweaksClient : ClientModInitializer {
 
     override fun onInitializeClient() {
         BlockRenderLayerMap.putBlock(NekomaTweaks.REDSTONE_CABLE_BLOCK, BlockRenderLayer.CUTOUT)
+//        BlockRenderLayerMap.putBlock(NekomaTweaks.REDSTONE_CABLE_BLOCK, BlockRenderLayer.TRANSLUCENT)
     }
 }
