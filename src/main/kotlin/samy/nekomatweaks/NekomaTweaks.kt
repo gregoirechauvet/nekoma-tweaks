@@ -33,14 +33,14 @@ object NekomaTweaks : ModInitializer {
             }
         }
 
-        // Register bluestone wire block
+        // Register redstone cable block
         val redstoneCableBlock = Registry.register(
             Registries.BLOCK,
             Identifier.of(MOD_ID, "redstone_cable"),
             RedstoneCableBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_WIRE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "redstone_cable")))),
         )
 
-        // Register bluestone dust item
+        // Register redstone cable item
         Registry.register(
             Registries.ITEM,
             Identifier.of(MOD_ID, "redstone_cable"),
