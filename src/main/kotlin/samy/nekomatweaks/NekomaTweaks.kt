@@ -12,9 +12,11 @@ import net.minecraft.item.Item
 import net.minecraft.item.Items
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
+import net.minecraft.registry.RegistryKey
+import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
-import samy.nekomatweaks.block.BluestoneWireBlock
+import samy.nekomatweaks.block.RedstoneCableBlock
 
 object NekomaTweaks : ModInitializer {
     private val logger = LoggerFactory.getLogger("nekoma-tweaks")
@@ -32,17 +34,17 @@ object NekomaTweaks : ModInitializer {
         }
 
         // Register bluestone wire block
-        val BLUESTONE_WIRE = Registry.register(
+        val redstoneCableBlock = Registry.register(
             Registries.BLOCK,
-            Identifier.of(MOD_ID, "bluestone_wire"),
-            BluestoneWireBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_WIRE))
+            Identifier.of(MOD_ID, "redstone_cable"),
+            RedstoneCableBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_WIRE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "redstone_cable")))),
         )
 
         // Register bluestone dust item
-        val BLUESTONE_DUST = Registry.register(
+        Registry.register(
             Registries.ITEM,
-            Identifier.of(MOD_ID, "bluestone_dust"),
-            BlockItem(BLUESTONE_WIRE, Item.Settings())
+            Identifier.of(MOD_ID, "redstone_cable"),
+            BlockItem(redstoneCableBlock, Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "redstone_cable"))))
         )
 
         // This code runs as soon as Minecraft is in a mod-load-ready state.

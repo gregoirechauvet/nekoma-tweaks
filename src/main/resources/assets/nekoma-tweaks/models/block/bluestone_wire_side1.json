@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/redstone_dust_side1",
-  "textures": {
-    "particle": "nekoma-tweaks:block/bluestone_wire_line",
-    "line": "nekoma-tweaks:block/bluestone_wire_line"
-  }
-}
