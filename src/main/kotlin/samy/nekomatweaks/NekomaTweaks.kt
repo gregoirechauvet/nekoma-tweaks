@@ -22,6 +22,8 @@ object NekomaTweaks : ModInitializer {
     private val logger = LoggerFactory.getLogger("nekoma-tweaks")
     const val MOD_ID = "nekoma-tweaks"
 
+    lateinit var REDSTONE_CABLE_BLOCK: RedstoneCableBlock
+
     override fun onInitialize() {
         val edibleComponent = FoodComponent.Builder().nutrition(4).saturationModifier(0.8f).build()
 
@@ -34,7 +36,7 @@ object NekomaTweaks : ModInitializer {
         }
 
         // Register redstone cable block
-        val redstoneCableBlock = Registry.register(
+        REDSTONE_CABLE_BLOCK = Registry.register(
             Registries.BLOCK,
             Identifier.of(MOD_ID, "redstone_cable"),
             RedstoneCableBlock(AbstractBlock.Settings.copy(Blocks.REDSTONE_WIRE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "redstone_cable")))),
@@ -44,7 +46,7 @@ object NekomaTweaks : ModInitializer {
         Registry.register(
             Registries.ITEM,
             Identifier.of(MOD_ID, "redstone_cable"),
-            BlockItem(redstoneCableBlock, Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "redstone_cable"))))
+            BlockItem(REDSTONE_CABLE_BLOCK, Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "redstone_cable"))))
         )
 
         // This code runs as soon as Minecraft is in a mod-load-ready state.
