@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/redstone_dust_dot",
+  "textures": {
+    "particle": "nekoma-tweaks:block/bluestone_wire_dot",
+    "dot": "nekoma-tweaks:block/bluestone_wire_dot"
+  }
+}
