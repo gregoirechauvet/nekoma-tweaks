@@ -12,6 +12,7 @@ object NekomaTweaksClient : ClientModInitializer {
 
     override fun onInitializeClient() {
         BlockRenderLayerMap.putBlock(NekomaTweaks.REDSTONE_CABLE_BLOCK, BlockRenderLayer.CUTOUT_MIPPED)
+        BlockRenderLayerMap.putBlock(NekomaTweaks.UNDERWATER_COMPARATOR_BLOCK, BlockRenderLayer.CUTOUT)
 
         // Register color provider for redstone cable to handle power level tinting
         ColorProviderRegistry.BLOCK.register({ state, _, _, _ ->

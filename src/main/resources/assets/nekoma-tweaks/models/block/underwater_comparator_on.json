@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/comparator_on",
+  "textures": {
+    "slab": "minecraft:block/smooth_stone",
+    "top": "minecraft:block/comparator_on",
+    "front": "minecraft:block/comparator_on",
+    "side": "minecraft:block/comparator_on",
+    "particle": "minecraft:block/comparator_on"
+  }
+}
