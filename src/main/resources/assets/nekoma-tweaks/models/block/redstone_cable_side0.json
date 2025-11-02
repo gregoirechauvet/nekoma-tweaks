@@ -1,6 +1,7 @@
 {
     "parent": "nekoma-tweaks:block/redstone_cable_side",
     "textures": {
-        "line": "nekoma-tweaks:block/redstone_cable_line0"
+        "line": "nekoma-tweaks:block/redstone_cable_line0",
+        "inner": "nekoma-tweaks:block/redstone_cable_line0_inner"
     }
 }
